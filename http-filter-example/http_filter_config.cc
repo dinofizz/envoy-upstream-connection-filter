@@ -13,7 +13,7 @@ namespace Configuration {
 
 class HttpSampleDecoderFilterConfigFactory : public NamedHttpFilterConfigFactory {
 public:
-  Http::FilterFactoryCb createFilterFactoryFromProto(const Protobuf::Message& proto_config,
+  absl::StatusOr<Http::FilterFactoryCb> createFilterFactoryFromProto(const Protobuf::Message& proto_config,
                                                      const std::string&,
                                                      FactoryContext& context) override {
 
